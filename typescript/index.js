@@ -1,4 +1,4 @@
 function adda(a, b) {
     return a + b;
 }
-console.log(add(1, 2));
+console.log(adda(1, 2));
