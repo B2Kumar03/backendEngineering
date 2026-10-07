@@ -1,3 +1,4 @@
+import type { Request, Response } from "express";
 import { Todo } from "../../validation/todo.schema.js";
 
 class TodoController {
@@ -6,7 +7,7 @@ class TodoController {
     this._db = [];
    }
 
-   public handleGetTodos(req:Request,res:Response){
+   public handleGetTodos = (req:Request,res:Response) => {
     const todos = this._db;
     return res.json({todos});
    }
