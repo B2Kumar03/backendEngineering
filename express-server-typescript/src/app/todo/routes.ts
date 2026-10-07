@@ -1,25 +1,11 @@
 import { Router } from "express";
 import TodoController from "./controller.js";
 
-const router = Router();
+const todoRouter = Router();
 const controller = new TodoController();
 
-router.get('/',controller.handleGetTodos)
+todoRouter.get('/',controller.handleGetTodos.bind(controller))
 
-router.post('/',(req,res)=>{
-    return res.status(200).json({message:'Hello ji kaise ho ?'})
-})
+todoRouter.post('/',controller.handleCreateTodo.bind(controller))
 
-router.put('/:id',(req,res)=>{
-    return res.status(200).json({message:'Hello ji kaise ho ?'})
-})
-
-router.get('/:id',(req,res)=>{
-    return res.status(200).json({message:'Hello ji kaise ho ?'})
-})
-
-router.delete('/:id',(req,res)=>{
-    return res.status(200).json({message:'Hello ji kaise ho ?'})
-})
-
-export default router;
+export default todoRouter;

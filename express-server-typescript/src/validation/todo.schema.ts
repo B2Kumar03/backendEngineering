@@ -1,5 +1,5 @@
 import {z} from "zod";
-const todoSchema = z.object({
+export const todoSchema = z.object({
     id: z.string().describe("The id of the todo"),
     title: z.string().describe("The title of the todo"),
     description: z.string().optional().describe("The description of the todo"),
